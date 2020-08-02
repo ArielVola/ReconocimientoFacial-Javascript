@@ -37,6 +37,7 @@ video.addEventListener('play', () => {
         const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor))
 
         console.log(results.toString());
+        canvas.getContext('2d').clearRect(0,0, canvas.width, canvas.height);
 
         results.forEach((result, i) => {
             const box = resizedDetections[i].detection.box
